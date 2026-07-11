@@ -1,0 +1,555 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook original-version='18.1' source-build='2023.1' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences><preference name='ui.shelf.height' value='26' /></preferences>
+  <datasources>
+    <datasource caption='shopee_enriched' inline='true' name='federated.shopee' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='shopee_enriched' name='textscan.shopee'>
+            <connection class='textscan' directory='Data' filename='shopee_enriched.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.shopee' name='shopee_enriched.csv' table='[shopee_enriched#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+        <column datatype='string' name='order_id' ordinal='0' />
+        <column datatype='integer' name='total_qty' ordinal='1' />
+        <column datatype='integer' name='total_weight_gr' ordinal='2' />
+        <column datatype='integer' name='total_returned_qty' ordinal='3' />
+        <column datatype='integer' name='Total Diskon' ordinal='4' />
+        <column datatype='string' name='product_categories' ordinal='5' />
+        <column datatype='integer' name='num_product_categories' ordinal='6' />
+        <column datatype='string' name='Status Pesanan' ordinal='7' />
+        <column datatype='string' name='Alasan Pembatalan' ordinal='8' />
+        <column datatype='string' name='Opsi Pengiriman' ordinal='9' />
+        <column datatype='string' name='Metode Pembayaran' ordinal='10' />
+        <column datatype='string' name='Kota/Kabupaten' ordinal='11' />
+        <column datatype='string' name='Provinsi' ordinal='12' />
+        <column datatype='integer' name='Ongkos Kirim Dibayar oleh Pembeli' ordinal='13' />
+        <column datatype='integer' name='Estimasi Potongan Biaya Pengiriman' ordinal='14' />
+        <column datatype='integer' name='Total Pembayaran' ordinal='15' />
+        <column datatype='integer' name='Perkiraan Ongkos Kirim' ordinal='16' />
+        <column datatype='string' name='Waktu Pesanan Dibuat' ordinal='17' />
+        <column datatype='string' name='source_file' ordinal='18' />
+        <column datatype='integer' name='is_cancel' ordinal='19' />
+        <column datatype='integer' name='is_completed' ordinal='20' />
+        <column datatype='integer' name='unit_price' ordinal='21' />
+        <column datatype='string' name='main_category' ordinal='22' />
+        <column datatype='integer' name='lost_gmv_est' ordinal='23' />
+        <column datatype='string' name='region_group' ordinal='24' />
+        <column datatype='string' name='cancel_reason_group' ordinal='25' />
+        <column datatype='string' name='order_month' ordinal='26' />
+          </columns>
+        </relation>
+        <metadata-records>
+      <metadata-record class='column'>
+        <remote-name>order_id</remote-name><remote-type>129</remote-type>
+        <local-name>[order_id]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>order_id</remote-alias><ordinal>0</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>total_qty</remote-name><remote-type>20</remote-type>
+        <local-name>[total_qty]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>total_qty</remote-alias><ordinal>1</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>total_weight_gr</remote-name><remote-type>20</remote-type>
+        <local-name>[total_weight_gr]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>total_weight_gr</remote-alias><ordinal>2</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>total_returned_qty</remote-name><remote-type>20</remote-type>
+        <local-name>[total_returned_qty]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>total_returned_qty</remote-alias><ordinal>3</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Total Diskon</remote-name><remote-type>20</remote-type>
+        <local-name>[Total Diskon]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Total Diskon</remote-alias><ordinal>4</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>product_categories</remote-name><remote-type>129</remote-type>
+        <local-name>[product_categories]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>product_categories</remote-alias><ordinal>5</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>num_product_categories</remote-name><remote-type>20</remote-type>
+        <local-name>[num_product_categories]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>num_product_categories</remote-alias><ordinal>6</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Status Pesanan</remote-name><remote-type>129</remote-type>
+        <local-name>[Status Pesanan]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Status Pesanan</remote-alias><ordinal>7</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Alasan Pembatalan</remote-name><remote-type>129</remote-type>
+        <local-name>[Alasan Pembatalan]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Alasan Pembatalan</remote-alias><ordinal>8</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Opsi Pengiriman</remote-name><remote-type>129</remote-type>
+        <local-name>[Opsi Pengiriman]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Opsi Pengiriman</remote-alias><ordinal>9</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Metode Pembayaran</remote-name><remote-type>129</remote-type>
+        <local-name>[Metode Pembayaran]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Metode Pembayaran</remote-alias><ordinal>10</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Kota/Kabupaten</remote-name><remote-type>129</remote-type>
+        <local-name>[Kota/Kabupaten]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Kota/Kabupaten</remote-alias><ordinal>11</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Provinsi</remote-name><remote-type>129</remote-type>
+        <local-name>[Provinsi]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Provinsi</remote-alias><ordinal>12</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Ongkos Kirim Dibayar oleh Pembeli</remote-name><remote-type>20</remote-type>
+        <local-name>[Ongkos Kirim Dibayar oleh Pembeli]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Ongkos Kirim Dibayar oleh Pembeli</remote-alias><ordinal>13</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Estimasi Potongan Biaya Pengiriman</remote-name><remote-type>20</remote-type>
+        <local-name>[Estimasi Potongan Biaya Pengiriman]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Estimasi Potongan Biaya Pengiriman</remote-alias><ordinal>14</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Total Pembayaran</remote-name><remote-type>20</remote-type>
+        <local-name>[Total Pembayaran]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Total Pembayaran</remote-alias><ordinal>15</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Perkiraan Ongkos Kirim</remote-name><remote-type>20</remote-type>
+        <local-name>[Perkiraan Ongkos Kirim]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Perkiraan Ongkos Kirim</remote-alias><ordinal>16</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>Waktu Pesanan Dibuat</remote-name><remote-type>129</remote-type>
+        <local-name>[Waktu Pesanan Dibuat]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>Waktu Pesanan Dibuat</remote-alias><ordinal>17</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>source_file</remote-name><remote-type>129</remote-type>
+        <local-name>[source_file]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>source_file</remote-alias><ordinal>18</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>is_cancel</remote-name><remote-type>20</remote-type>
+        <local-name>[is_cancel]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>is_cancel</remote-alias><ordinal>19</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>is_completed</remote-name><remote-type>20</remote-type>
+        <local-name>[is_completed]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>is_completed</remote-alias><ordinal>20</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>unit_price</remote-name><remote-type>20</remote-type>
+        <local-name>[unit_price]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>unit_price</remote-alias><ordinal>21</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>main_category</remote-name><remote-type>129</remote-type>
+        <local-name>[main_category]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>main_category</remote-alias><ordinal>22</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>lost_gmv_est</remote-name><remote-type>20</remote-type>
+        <local-name>[lost_gmv_est]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>lost_gmv_est</remote-alias><ordinal>23</ordinal>
+        <local-type>integer</local-type><aggregation>Sum</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>region_group</remote-name><remote-type>129</remote-type>
+        <local-name>[region_group]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>region_group</remote-alias><ordinal>24</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>cancel_reason_group</remote-name><remote-type>129</remote-type>
+        <local-name>[cancel_reason_group]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>cancel_reason_group</remote-alias><ordinal>25</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+      <metadata-record class='column'>
+        <remote-name>order_month</remote-name><remote-type>129</remote-type>
+        <local-name>[order_month]</local-name><parent-name>[shopee_enriched.csv]</parent-name>
+        <remote-alias>order_month</remote-alias><ordinal>26</ordinal>
+        <local-type>string</local-type><aggregation>Count</aggregation><contains-null>true</contains-null>
+      </metadata-record>
+        </metadata-records>
+      </connection>
+    <column datatype='string' name='[order_id]' role='dimension' type='nominal' />
+    <column datatype='integer' caption='Jumlah Item' name='[total_qty]' role='measure' type='quantitative' />
+    <column datatype='integer' name='[total_weight_gr]' role='measure' type='quantitative' />
+    <column datatype='integer' name='[total_returned_qty]' role='measure' type='quantitative' />
+    <column datatype='integer' name='[Total Diskon]' role='measure' type='quantitative' />
+    <column datatype='string' name='[product_categories]' role='dimension' type='nominal' />
+    <column datatype='integer' name='[num_product_categories]' role='measure' type='quantitative' />
+    <column datatype='string' name='[Status Pesanan]' role='dimension' type='nominal' />
+    <column datatype='string' name='[Alasan Pembatalan]' role='dimension' type='nominal' />
+    <column datatype='string' name='[Opsi Pengiriman]' role='dimension' type='nominal' />
+    <column datatype='string' caption='Metode Pembayaran' name='[Metode Pembayaran]' role='dimension' type='nominal' />
+    <column datatype='string' name='[Kota/Kabupaten]' role='dimension' type='nominal'>
+      <semantic-role value='[city].[name]' />
+    </column>
+    <column datatype='string' caption='Provinsi' name='[Provinsi]' role='dimension' type='nominal'>
+      <semantic-role value='[state/province].[name]' />
+    </column>
+    <column datatype='integer' name='[Ongkos Kirim Dibayar oleh Pembeli]' role='measure' type='quantitative' />
+    <column datatype='integer' name='[Estimasi Potongan Biaya Pengiriman]' role='measure' type='quantitative' />
+    <column datatype='integer' caption='Total Pembayaran (GMV)' name='[Total Pembayaran]' role='measure' type='quantitative' />
+    <column datatype='integer' name='[Perkiraan Ongkos Kirim]' role='measure' type='quantitative' />
+    <column datatype='string' name='[Waktu Pesanan Dibuat]' role='dimension' type='nominal' />
+    <column datatype='string' name='[source_file]' role='dimension' type='nominal' />
+    <column datatype='integer' caption='Batal (1/0)' name='[is_cancel]' role='measure' type='quantitative' />
+    <column datatype='integer' name='[is_completed]' role='measure' type='quantitative' />
+    <column datatype='integer' name='[unit_price]' role='measure' type='quantitative' />
+    <column datatype='string' caption='Kategori Utama' name='[main_category]' role='dimension' type='nominal' />
+    <column datatype='integer' caption='Estimasi Nilai Hilang' name='[lost_gmv_est]' role='measure' type='quantitative' />
+    <column datatype='string' caption='Kelompok Wilayah' name='[region_group]' role='dimension' type='nominal' />
+    <column datatype='string' caption='Kelompok Alasan Batal' name='[cancel_reason_group]' role='dimension' type='nominal' />
+    <column datatype='string' caption='Bulan Pesanan' name='[order_month]' role='dimension' type='ordinal' />
+    <column caption='Tingkat Batal' datatype='real' default-format='p0%' name='[Calculation_CancelRate]' role='measure' type='quantitative'>
+      <calculation class='tableau' formula='SUM([is_cancel]) / COUNT([order_id])' />
+    </column>
+    <column caption='Jumlah Pesanan' datatype='integer' name='[Calculation_OrderCount]' role='measure' type='quantitative'>
+      <calculation class='tableau' formula='1' />
+    </column>
+    </datasource>
+  </datasources>
+  <worksheets>
+  <worksheet name='1. Tren GMV'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[Total Pembayaran]' derivation='Sum' name='[sum:Total Pembayaran:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[order_month]' derivation='None' name='[none:order_month:nk]' pivot='key' type='nominal' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Line' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[sum:Total Pembayaran:qk]</rows>
+      <cols>[federated.shopee].[none:order_month:nk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='2. Nilai Hilang per Bulan'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[lost_gmv_est]' derivation='Sum' name='[sum:lost_gmv_est:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[order_month]' derivation='None' name='[none:order_month:nk]' pivot='key' type='nominal' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Bar' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[sum:lost_gmv_est:qk]</rows>
+      <cols>[federated.shopee].[none:order_month:nk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='3. Batal per Pembayaran'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[Metode Pembayaran]' derivation='None' name='[none:Metode Pembayaran:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_CancelRate]' derivation='User' name='[usr:Calculation_CancelRate:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Bar' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[none:Metode Pembayaran:nk]</rows>
+      <cols>[federated.shopee].[usr:Calculation_CancelRate:qk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='4. Alasan Batal'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[cancel_reason_group]' derivation='None' name='[none:cancel_reason_group:nk]' pivot='key' type='nominal' />
+        <column-instance column='[is_cancel]' derivation='Sum' name='[sum:is_cancel:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Bar' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[none:cancel_reason_group:nk]</rows>
+      <cols>[federated.shopee].[sum:is_cancel:qk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='5. Batal per Wilayah'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[region_group]' derivation='None' name='[none:region_group:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_CancelRate]' derivation='User' name='[usr:Calculation_CancelRate:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Bar' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[none:region_group:nk]</rows>
+      <cols>[federated.shopee].[usr:Calculation_CancelRate:qk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='6. Tren Batal'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[order_month]' derivation='None' name='[none:order_month:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_CancelRate]' derivation='User' name='[usr:Calculation_CancelRate:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Line' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[none:order_month:nk]</rows>
+      <cols>[federated.shopee].[usr:Calculation_CancelRate:qk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='G1 Bar - Pesanan per Pembayaran'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[Metode Pembayaran]' derivation='None' name='[none:Metode Pembayaran:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_OrderCount]' derivation='Sum' name='[sum:Calculation_OrderCount:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Bar' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[none:Metode Pembayaran:nk]</rows>
+      <cols>[federated.shopee].[sum:Calculation_OrderCount:qk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='G2 Line - Tren GMV'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[Total Pembayaran]' derivation='Sum' name='[sum:Total Pembayaran:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[order_month]' derivation='None' name='[none:order_month:nk]' pivot='key' type='nominal' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Line' />
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[sum:Total Pembayaran:qk]</rows>
+      <cols>[federated.shopee].[none:order_month:nk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='G3 Pie - Komposisi Wilayah'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[region_group]' derivation='None' name='[none:region_group:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_OrderCount]' derivation='Sum' name='[sum:Calculation_OrderCount:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Pie' />
+          <encodings>
+            <color column='[federated.shopee].[none:region_group:nk]' />
+            <angle column='[federated.shopee].[sum:Calculation_OrderCount:qk]' />
+          </encodings>
+        </pane>
+      </panes>
+      <rows></rows>
+      <cols></cols>
+    </table>
+  </worksheet>
+  <worksheet name='G4 Treemap - GMV per Kategori'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[main_category]' derivation='None' name='[none:main_category:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Total Pembayaran]' derivation='Sum' name='[sum:Total Pembayaran:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Square' />
+          <encodings>
+            <color column='[federated.shopee].[none:main_category:nk]' />
+            <size column='[federated.shopee].[sum:Total Pembayaran:qk]' />
+          </encodings>
+        </pane>
+      </panes>
+      <rows></rows>
+      <cols></cols>
+    </table>
+  </worksheet>
+  <worksheet name='G5 Scatter - Qty vs Nilai'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[Total Pembayaran]' derivation='Sum' name='[sum:Total Pembayaran:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[total_qty]' derivation='Sum' name='[sum:total_qty:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[order_id]' derivation='None' name='[none:order_id:nk]' pivot='key' type='nominal' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Circle' />
+          <encodings>
+            <lod column='[federated.shopee].[none:order_id:nk]' />
+          </encodings>
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[sum:Total Pembayaran:qk]</rows>
+      <cols>[federated.shopee].[sum:total_qty:qk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='G7 Heatmap - Pembayaran x Wilayah'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[Metode Pembayaran]' derivation='None' name='[none:Metode Pembayaran:nk]' pivot='key' type='nominal' />
+        <column-instance column='[region_group]' derivation='None' name='[none:region_group:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_CancelRate]' derivation='User' name='[usr:Calculation_CancelRate:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Square' />
+          <encodings>
+            <color column='[federated.shopee].[usr:Calculation_CancelRate:qk]' />
+          </encodings>
+        </pane>
+      </panes>
+      <rows>[federated.shopee].[none:Metode Pembayaran:nk]</rows>
+      <cols>[federated.shopee].[none:region_group:nk]</cols>
+    </table>
+  </worksheet>
+  <worksheet name='G11 BAN - Total GMV'>
+    <table>
+      <view>
+        <datasources><datasource caption='shopee_enriched' name='federated.shopee' /></datasources>
+        <datasource-dependencies datasource='federated.shopee'>
+        <column-instance column='[Total Pembayaran]' derivation='Sum' name='[sum:Total Pembayaran:qk]' pivot='key' type='quantitative' />
+        </datasource-dependencies>
+        <aggregation value='true' />
+      </view>
+      <style />
+      <panes>
+        <pane selection-relaxation-option='selection-relaxation-allow'>
+          <view><breakdown value='auto' /></view>
+          <mark class='Text' />
+          <encodings>
+            <text column='[federated.shopee].[sum:Total Pembayaran:qk]' />
+          </encodings>
+        </pane>
+      </panes>
+      <rows></rows>
+      <cols></cols>
+    </table>
+  </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='1. Tren GMV' />
+    <window class='worksheet' name='2. Nilai Hilang per Bulan' />
+    <window class='worksheet' name='3. Batal per Pembayaran' />
+    <window class='worksheet' name='4. Alasan Batal' />
+    <window class='worksheet' name='5. Batal per Wilayah' />
+    <window class='worksheet' name='6. Tren Batal' />
+    <window class='worksheet' name='G1 Bar - Pesanan per Pembayaran' />
+    <window class='worksheet' name='G2 Line - Tren GMV' />
+    <window class='worksheet' name='G3 Pie - Komposisi Wilayah' />
+    <window class='worksheet' name='G4 Treemap - GMV per Kategori' />
+    <window class='worksheet' name='G5 Scatter - Qty vs Nilai' />
+    <window class='worksheet' name='G7 Heatmap - Pembayaran x Wilayah' />
+    <window class='worksheet' name='G11 BAN - Total GMV' />
+  </windows>
+</workbook>
